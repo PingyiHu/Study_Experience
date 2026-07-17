@@ -1,0 +1,137 @@
+site_name: LLM 安全学习笔记
+site_description: 系统梳理 LLM 安全领域四大方向的个人学习笔记与知识库
+site_author: Study_Experience
+copyright: Copyright &copy; 2024 - 2026 Study_Experience
+
+repo_url: https://github.com/your-username/Study_Experience
+repo_name: Study_Experience
+edit_uri: ""
+
+theme:
+  name: material
+  language: zh
+  palette:
+    # 浅色模式
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换至深色模式
+    # 深色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs           # 顶部标签导航
+    - navigation.sections       # 章节导航
+    - navigation.expand         # 默认展开导航
+    - navigation.top            # 返回顶部按钮
+    - navigation.instant        # 即时导航（无需刷新）
+    - navigation.tracking       # URL 跟踪
+    - navigation.tabs.sticky    # 标签栏固定
+    - search.suggest            # 搜索建议
+    - search.highlight          # 搜索结果高亮
+    - search.share              # 分享搜索结果
+    - content.code.copy         # 代码块复制按钮
+    - content.code.annotate     # 代码注释
+    - content.tooltips          # 工具提示
+    - content.tabs.link         # 标签页链接同步
+    - toc.follow                # 目录跟随滚动
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      permalink_title: 锚点链接
+      toc_depth: 4
+  - tables
+  - sane_lists
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - javascripts/auth.js
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - 首页: index.md
+  - LLM 通用学习: llm_study.md
+  - 研究经验:
+    - research/index.md
+    - How to Read a Paper: research/how_to_read.md
+    - Code Standardization: research/code_standard.md
+    - How to Write a Paper: research/how_to_write.md
+  - LLM 安全专题:
+    - llm_safety/index.md
+    - 1. 越狱攻击与防御: llm_safety/sec01.md
+    - 2. 后门攻击与防御: llm_safety/sec02.md
+    - 3. 提示注入攻击与防御: llm_safety/sec03.md
+    - 4. Agent 安全与防御: llm_safety/sec04.md
+    - 5. 综合学习路线图: llm_safety/sec05.md
+    - 完整版（单页）: llm_safety/complete.md
+    - 文档大纲: llm_safety/outline.md
+    - 执行计划: llm_safety/plan.md
+    - 原始调研素材:
+      - 越狱方向调研: llm_safety/research/wide01_jailbreak.md
+      - 后门方向调研: llm_safety/research/wide02_backdoor.md
+      - 提示注入方向调研: llm_safety/research/wide03_prompt_injection.md
+      - Agent 安全方向调研: llm_safety/research/wide04_agent.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-username/Study_Experience
+  generator: false
