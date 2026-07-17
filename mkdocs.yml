@@ -3,7 +3,7 @@ site_description: 系统梳理 LLM 安全领域四大方向的个人学习笔记
 site_author: Study_Experience
 copyright: Copyright &copy; 2024 - 2026 Study_Experience
 
-repo_url: https://github.com/your-username/Study_Experience
+repo_url: https://github.com/PingyiHu/Study_Experience
 repo_name: Study_Experience
 edit_uri: ""
 
@@ -133,5 +133,5 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/your-username/Study_Experience
+      link: https://github.com/PingyiHu/Study_Experience
   generator: false
