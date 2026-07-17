@@ -10,6 +10,7 @@ edit_uri: ""
 theme:
   name: material
   language: zh
+  custom_dir: docs/overrides
   palette:
     # 浅色模式
     - scheme: default

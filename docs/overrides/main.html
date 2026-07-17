@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+<script>
+(function() {
+  var storageKey = 'llm_safety_auth';
+  var password = 'dnnsecurity';
+  
+  // 检查当前页面是否是登录页
+  var isLoginPage = window.location.pathname.endsWith('login.html') || 
+                    window.location.pathname.endsWith('login');
+  
+  function generateToken() {
+    var date = new Date();
+    var dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    return btoa(password + '_' + dateStr);
+  }
+  
+  function isLoggedIn() {
+    if (sessionStorage.getItem(storageKey) === 'true') return true;
+    var authData = localStorage.getItem(storageKey);
+    if (!authData) return false;
+    try {
+      var data = JSON.parse(authData);
+      if (Date.now() > data.expiry) {
+        localStorage.removeItem(storageKey);
+        return false;
+      }
+      return data.token === generateToken();
+    } catch (e) {
+      localStorage.removeItem(storageKey);
+      return false;
+    }
+  }
+  
+  // 如果不是登录页且未登录，跳转到登录页
+  if (!isLoginPage && !isLoggedIn()) {
+    window.location.href = '/Study_Experience/login.html';
+  }
+  
+  // 如果是登录页且已登录，跳转到首页
+  if (isLoginPage && isLoggedIn()) {
+    window.location.href = '/Study_Experience/';
+  }
+})();
+</script>
+{% endblock %}
