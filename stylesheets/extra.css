@@ -1,0 +1,502 @@
+/* ============================================
+   LLM 安全学习笔记 - 自定义样式
+   ============================================ */
+
+/* ---------- 全局变量 ---------- */
+:root {
+  --custom-primary: #6366f1;
+  --custom-primary-light: #818cf8;
+  --custom-accent: #f59e0b;
+  --custom-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --custom-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --custom-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --custom-radius: 0.75rem;
+}
+
+/* 深色模式变量 */
+[data-md-color-scheme="slate"] {
+  --custom-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --custom-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- 导航栏美化 ---------- */
+.md-header {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.md-tabs {
+  background-color: transparent;
+}
+
+/* ---------- 首页 Hero 区域 ---------- */
+.hero-banner {
+  background: var(--custom-gradient);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: var(--custom-radius);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+.hero-banner h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-banner p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ---------- 卡片样式增强 ---------- */
+.md-typeset .grid.cards {
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.md-typeset .grid.cards > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--custom-radius);
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--md-default-bg-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.md-typeset .grid.cards > ul > li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--custom-gradient);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  box-shadow: var(--custom-shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--custom-primary-light);
+}
+
+.md-typeset .grid.cards > ul > li:hover::before {
+  transform: scaleX(1);
+}
+
+.md-typeset .grid.cards > ul > li .twemoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- 表格样式优化 ---------- */
+.md-typeset table:not([class]) {
+  font-size: 0.85rem;
+  border-radius: var(--custom-radius);
+  overflow: hidden;
+  box-shadow: var(--custom-shadow);
+}
+
+.md-typeset table:not([class]) th {
+  font-weight: 700;
+  background: var(--custom-gradient);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background-color: var(--md-primary-fg-color--lightest);
+}
+
+/* ---------- 引用块美化 ---------- */
+.md-typeset blockquote {
+  border-left: 4px solid var(--custom-primary);
+  background: linear-gradient(135deg, var(--md-code-bg-color) 0%, rgba(99, 102, 241, 0.05) 100%);
+  padding: 1rem 1.5rem;
+  border-radius: 0 var(--custom-radius) var(--custom-radius) 0;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.md-typeset blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 4rem;
+  color: var(--custom-primary);
+  opacity: 0.2;
+  font-family: Georgia, serif;
+}
+
+/* ---------- 代码块美化 ---------- */
+.md-typeset code {
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  font-size: 0.85em;
+}
+
+.md-typeset pre > code {
+  border-radius: var(--custom-radius);
+  padding: 1rem;
+}
+
+.md-typeset .highlight {
+  border-radius: var(--custom-radius);
+  overflow: hidden;
+}
+
+/* ---------- 标题样式 ---------- */
+.md-typeset h1 {
+  font-weight: 800;
+  color: var(--custom-primary);
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--custom-primary);
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  margin-top: 2rem;
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--custom-primary);
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+/* ---------- 链接样式 ---------- */
+.md-typeset a {
+  color: var(--custom-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--custom-primary-light);
+  border-bottom-color: var(--custom-primary-light);
+}
+
+/* ---------- 列表样式 ---------- */
+.md-typeset ul {
+  padding-left: 1.5rem;
+}
+
+.md-typeset li {
+  margin-bottom: 0.5rem;
+}
+
+.md-typeset li::marker {
+  color: var(--custom-primary);
+}
+
+/* ---------- Admonition 美化 ---------- */
+.md-typeset .admonition {
+  border-radius: var(--custom-radius);
+  border-left-width: 4px;
+  box-shadow: var(--custom-shadow);
+}
+
+.md-typeset .admonition-title {
+  border-radius: var(--custom-radius) var(--custom-radius) 0 0;
+  font-weight: 600;
+}
+
+/* ---------- 任务列表美化 ---------- */
+.md-typeset .task-list-item {
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.md-typeset .task-list-item:hover {
+  background-color: var(--md-primary-fg-color--lightest);
+}
+
+.md-typeset .task-list-item input[type="checkbox"] {
+  accent-color: var(--custom-primary);
+}
+
+/* ---------- 脚注美化 ---------- */
+.md-typeset .footnote {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* ---------- 目录美化 ---------- */
+.md-sidebar--secondary .md-nav__link {
+  font-size: 0.8rem;
+  transition: color 0.2s ease;
+}
+
+.md-sidebar--secondary .md-nav__link:hover {
+  color: var(--custom-primary);
+}
+
+.md-sidebar--secondary .md-nav__link--active {
+  color: var(--custom-primary);
+  font-weight: 600;
+}
+
+/* ---------- Mermaid 图表美化 ---------- */
+.mermaid {
+  font-family: 'Roboto', sans-serif;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- 数学公式美化 ---------- */
+.md-typeset .MathJax {
+  font-size: 1.05em;
+}
+
+/* ---------- 响应式调整 ---------- */
+@media screen and (max-width: 76.1875em) {
+  .hero-banner {
+    padding: 2rem 1.5rem;
+  }
+  
+  .hero-banner h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-banner p {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- 滚动条美化 ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--md-default-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-default-fg-color--light);
+}
+
+/* ---------- 选中文本样式 ---------- */
+::selection {
+  background-color: var(--custom-primary);
+  color: white;
+}
+
+/* ---------- 打印样式 ---------- */
+@media print {
+  .md-header,
+  .md-sidebar,
+  .md-footer,
+  .hero-banner {
+    display: none;
+  }
+  
+  .md-content {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* ---------- 动画关键帧 ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* 应用动画 */
+.hero-banner h1 {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.hero-banner p {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.md-typeset .grid.cards > ul > li {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.md-typeset .grid.cards > ul > li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.md-typeset .grid.cards > ul > li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.md-typeset .grid.cards > ul > li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* ---------- 统计数字样式 ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--md-default-bg-color);
+  border-radius: var(--custom-radius);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--custom-shadow);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--custom-primary);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.5rem;
+}
+
+/* ---------- 标签样式 ---------- */
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.tag-primary {
+  background-color: var(--custom-primary);
+  color: white;
+}
+
+.tag-secondary {
+  background-color: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color);
+}
+
+.tag:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- 进度条样式 ---------- */
+.progress-bar {
+  height: 8px;
+  background-color: var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--custom-gradient);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* ---------- 工具提示美化 ---------- */
+.md-typeset .tooltip {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dashed var(--custom-primary);
+}
+
+.md-typeset .tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  background: var(--md-default-fg-color);
+  color: var(--md-default-bg-color);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.md-typeset .tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+  bottom: calc(100% + 8px);
+}
