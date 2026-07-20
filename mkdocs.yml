@@ -115,6 +115,30 @@ nav:
     - How to Read a Paper: research/how_to_read.md
     - Code Standardization: research/code_standard.md
     - How to Write a Paper: research/how_to_write.md
+  - 面试经验:
+    - interview/index.md
+    - 八股文: interview/basics.md
+    - 面经总结: interview/summary.md
+    - HR面试: interview/hr.md
+    - 面试指南: interview/guide.md
+    - 强化学习:
+      - 强化学习基础: interview/reinforcement_learning.md
+      - PPO: interview/ppo.md
+      - DPO: interview/dpo.md
+      - GRPO: interview/grpo.md
+      - DeepSeek R1: interview/deepseek_r1.md
+    - 模型架构:
+      - 注意力机制: interview/attention.md
+      - BERT: interview/bert.md
+      - Qwen: interview/qwen.md
+      - DeepSeek V3: interview/deepseek_v3.md
+      - MoE: interview/moe.md
+    - 工程实践:
+      - LoRA: interview/lora.md
+      - RAG: interview/rag.md
+      - vLLM: interview/vllm.md
+      - DeepSpeed: interview/deepspeed.md
+      - Function Calling: interview/function_calling.md
   - LLM 安全专题:
     - llm_safety/index.md
     - 1. 越狱攻击与防御: llm_safety/sec01.md

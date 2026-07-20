@@ -44,6 +44,26 @@ FILE_MAPPINGS = [
     ("LLM_safety/research/llm_safety_wide02_backdoor.md", "llm_safety/research/wide02_backdoor.md", False, None, False),
     ("LLM_safety/research/llm_safety_wide03_prompt_injection.md", "llm_safety/research/wide03_prompt_injection.md", False, None, False),
     ("LLM_safety/research/llm_safety_wide04_agent.md", "llm_safety/research/wide04_agent.md", False, None, False),
+    # 面试经验
+    ("interview experience/八股.md", "interview/basics.md", False, None, False),
+    ("interview experience/再冲！/面经总结 2575417e524a8077b5e7c0522106ad58.md", "interview/summary.md", False, None, False),
+    ("interview experience/再冲！/HR面试 28b5417e524a805ab0bcfdd9fa2b92df.md", "interview/hr.md", False, None, False),
+    ("interview experience/再冲！/Theseyouwant 2405417e524a815bb01aff7128180d62.md", "interview/guide.md", False, None, False),
+    ("interview experience/再冲！/强化学习篇（泽伟总结） 2405417e524a818da0f3c5360e9842d3.md", "interview/reinforcement_learning.md", False, None, False),
+    ("interview experience/再冲！/GRPO相关 24c5417e524a8051b8f1ca3fde3c8a87.md", "interview/grpo.md", False, None, False),
+    ("interview experience/再冲！/PPO相关 2475417e524a80798582fae023d0eaa5.md", "interview/ppo.md", False, None, False),
+    ("interview experience/再冲！/DPO相关 24f5417e524a80658cddd7181089774e.md", "interview/dpo.md", False, None, False),
+    ("interview experience/再冲！/R1相关 2565417e524a8026a915d156a0ae9735.md", "interview/deepseek_r1.md", False, None, False),
+    ("interview experience/再冲！/MoE 2865417e524a80bfb891e3caa29f4641.md", "interview/moe.md", False, None, False),
+    ("interview experience/再冲！/DEEPSEEK V3 27b5417e524a8073b795d648601ea650.md", "interview/deepseek_v3.md", False, None, False),
+    ("interview experience/再冲！/Qwen结构 25d5417e524a8092802bf002fd2a3daa.md", "interview/qwen.md", False, None, False),
+    ("interview experience/再冲！/BERT 2625417e524a806693bed6cd2a22433d.md", "interview/bert.md", False, None, False),
+    ("interview experience/再冲！/attention相关 2415417e524a80928224e792e46fa63c.md", "interview/attention.md", False, None, False),
+    ("interview experience/再冲！/LORA手撕 2565417e524a8070a6abddf85d353500.md", "interview/lora.md", False, None, False),
+    ("interview experience/再冲！/RAG 2635417e524a80e5ba48d36517c68e06.md", "interview/rag.md", False, None, False),
+    ("interview experience/再冲！/VLLM推理引擎 25b5417e524a80ec9cfbe95367aec8ef.md", "interview/vllm.md", False, None, False),
+    ("interview experience/再冲！/DeepSpeed 2575417e524a803fb0befc36c9879a11.md", "interview/deepspeed.md", False, None, False),
+    ("interview experience/再冲！/Function Calling 2405417e524a816aaa80c331b1459c43.md", "interview/function_calling.md", False, None, False),
 ]
 
 

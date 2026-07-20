@@ -16,17 +16,20 @@
   research_*.md          研究经验三篇
   LLM_study.md           LLM 通用学习
   Things that...md       代码规范（旧文件）
+  interview experience/  面试经验（飞书导出）
 
         ↓  python scripts/sync_docs.py
 
 docs/                    ← MkDocs 构建源
   llm_safety/              同步生成，不要直接编辑
   research/                同步生成，不要直接编辑
+  interview/               同步生成，不要直接编辑
   llm_study.md             同步生成
   research_standard.md     同步生成
   index.md                 ★ 直接编辑
   llm_safety/index.md      ★ 直接编辑
   research/index.md        ★ 直接编辑
+  interview/index.md       ★ 直接编辑
   stylesheets/             ★ 直接编辑
   javascripts/             ★ 直接编辑
 ```
